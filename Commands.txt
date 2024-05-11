@@ -1,0 +1,22 @@
+creation model et table: 			php artisan make:model Name -m
+
+Migration:					php artisan migrate:fresh
+
+install tailwindcss:				npm install -D tailwindcss postcss autoprefixer
+						npx tailwindcss init -p
+
+install preline(ui tailwin components):		npm install preline
+
+then compile all assets:			npm run dev
+
+install livewire:				composer require livewire/livewire
+
+create livewire template:			php artisan livewire:layout
+
+create livewire component:			php artisan make:livewire HomePage
+
+fix design:					npm run build
+
+create command for admin credentials:   	php artisan make:command CreateAdminUser
+
+run the command:                       		php artisan admin:create
