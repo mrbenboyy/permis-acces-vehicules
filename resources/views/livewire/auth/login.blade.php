@@ -58,8 +58,9 @@
                     <!-- End Form Group -->
 
                     <button type="submit"
-                        class="w-80 py-3 px-4 mx-auto inline-flex justify-center items-center text-sm rounded-lg border border-transparent bg-[#106414] text-white hover:scale-105 duration-300 disabled:opacity-50 disabled:pointer-events-none">Se
-                        Connecter</button>
+                        class="w-80 py-3 px-4 mx-auto inline-flex justify-center items-center text-sm rounded-lg border border-transparent bg-[#106414] text-white hover:scale-105 duration-300 disabled:opacity-50 disabled:pointer-events-none"><span
+                            wire:loading.remove wire:target="save()">Se
+                            Connecter</span><span wire:loading wire:target="save()">Connexion...</span></button>
                 </div>
             </form>
             <!-- End Form -->

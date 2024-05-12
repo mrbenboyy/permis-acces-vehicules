@@ -175,15 +175,22 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'nom_complet' => [
+            'required' => 'Le nom complet est obligatoire'
+        ],
         'email' => [
-            'required' => 'L\'adresse email est obligatoire.',
-            'exists' => 'L\'adresse email est incorrecte.',
+            'required' => 'L\'Adresse email est obligatoire.',
+            'exists' => 'L\'Adresse email est incorrecte.',
+            'unique' => 'Cette address email existe déjà'
         ],
         'password' => [
             'required' => 'Le mot de passe est obligatoire.',
             'invalid' => 'Le mot de passe est incorrect.',
             'min' => 'Le mot de passe doit contenir au moins :min caractères.',
         ],
+        'role' => [
+            'required' => 'Le rôle est obligatoire'
+        ]
     ],
 
 

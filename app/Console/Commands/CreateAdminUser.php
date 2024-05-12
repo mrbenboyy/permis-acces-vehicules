@@ -25,6 +25,7 @@ class CreateAdminUser extends Command
             'nom_complet' => 'Admin',
             'email' => $email,
             'password' => $hashedPassword,
+            'role' => 'administrateur'
         ]);
 
         $this->info('Admin user created successfully!');

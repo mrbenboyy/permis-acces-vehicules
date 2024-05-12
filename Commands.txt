@@ -20,3 +20,7 @@ fix design:					npm run build
 create command for admin credentials:   	php artisan make:command CreateAdminUser
 
 run the command:                       		php artisan admin:create
+
+create custom middleware: php artisan make:middleware CheckUserRole
+to not access to login :    php artisan make:middleware RedirectIfAuthenticated
+

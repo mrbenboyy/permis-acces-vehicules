@@ -19,8 +19,8 @@
             <ul class="space-y-1.5">
                 <li>
                     <a wire:navigate
-                        class="flex items-center gap-x-3.5 py-2 px-2.5 {{ request()->is('/') ? 'bg-gray-100 text-gray-700' : 'text-white' }} text-sm rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-neutral-700 dark:text-white hover:scale-105 duration-300"
-                        href="/login">
+                        class="flex items-center gap-x-3.5 py-2 px-2.5 {{ request()->is('liste_permis') ? 'bg-gray-100 text-gray-700' : 'text-white' }} text-sm rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-neutral-700 dark:text-white hover:scale-105 duration-300"
+                        href="/liste_permis">
                         <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -31,8 +31,9 @@
                     </a>
                 </li>
 
-                <li><a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300 hover:scale-105 duration-300"
-                        href="#">
+                <li><a wire:navigate
+                        class="flex items-center gap-x-3.5 py-2 px-2.5 {{ request()->is('historique') ? 'bg-gray-100 text-gray-700' : 'text-white' }} text-sm rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300 hover:scale-105 duration-300"
+                        href="/historique">
                         <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="currentColor"
                             viewBox="0 0 512 512">
                             <path
@@ -40,16 +41,18 @@
                         </svg>
                         Historique
                     </a></li>
-                <li><a wire:navigate
-                        class="flex items-center {{ request()->is('users') ? 'bg-white text-gray-700' : 'text-white' }} gap-x-3.5 py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300 hover:scale-105 duration-300"
-                        href="/users">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4"
-                            fill="currentColor">
-                            <path
-                                d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
-                        </svg>
-                        Utilisateurs
-                    </a></li>
+                @if (auth()->user()->role == 'administrateur')
+                    <li><a wire:navigate
+                            class="flex items-center {{ request()->is('users') ? 'bg-white text-gray-700' : 'text-white' }} gap-x-3.5 py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300 hover:scale-105 duration-300"
+                            href="/users">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4"
+                                fill="currentColor">
+                                <path
+                                    d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
+                            </svg>
+                            Utilisateurs
+                        </a></li>
+                @endif
                 <li><a wire;navigate
                         class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300 hover:scale-105 duration-300"
                         href="/logout">
