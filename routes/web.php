@@ -1,10 +1,13 @@
 <?php
 
 use App\Livewire\Auth\Login;
+use App\Livewire\EditPermisPage;
 use App\Livewire\HistoriquePage;
 use App\Livewire\HomePage;
+use App\Livewire\PermisFormPage;
 use App\Livewire\PermisPage;
 use App\Livewire\UserPage;
+use App\Livewire\ViewPermis;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomePage::class)->name('home');
@@ -15,6 +18,9 @@ Route::middleware('guest')->get('/login', Login::class)->name('login');
 Route::middleware('auth')->group(function () {
     Route::get('/', HomePage::class)->name('home');
     Route::get('/liste_permis', PermisPage::class)->name('liste_permis');
+    Route::get('/ajouter_permis', PermisFormPage::class)->name('ajouter_permis');
+    Route::get('/permis/{id}', ViewPermis::class)->name('voir_permis');
+    Route::get('/edit/{id}', EditPermisPage::class)->name('edit_permis');
     Route::get('/historique', HistoriquePage::class)->name('historique');
     Route::get('/logout', function () {
         auth()->logout();

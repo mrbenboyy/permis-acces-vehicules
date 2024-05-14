@@ -18,7 +18,7 @@ class ListePermis extends Model
         'date_expiration',
         'raison_acces',
         'annee_courante',
-        'numero_serie',
         'numero'
     ];
+    
 }

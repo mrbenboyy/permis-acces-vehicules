@@ -190,6 +190,33 @@ return [
         ],
         'role' => [
             'required' => 'Le rôle est obligatoire'
+        ],
+        'immatriculation' => [
+            'required' => "L'immatriculation est obligatoire"
+        ],
+        'type_permis' => [
+            'required' => 'Le type de permis est obligatoire'
+        ],
+        'proprietaire_chauffeur' => [
+            'required' => 'Le propriétaire et chauffeur est obligatoire'
+        ],
+        'type_vehicule' => [
+            'required' => 'Le type de vehicule est obligatoire'
+        ],
+        'zone_acces' => [
+            'required' => "La zone d'accés est obligatoire"
+        ],
+        'date_expiration' => [
+            'required' => "La date d'expiration est obligatoire"
+        ],
+        'raison_acces' => [
+            'required' => "La raison d'accés est obligatoire"
+        ],
+        'annee_courante' => [
+            'required' => "L'année courante est obligatoire"
+        ],
+        'numero' => [
+            'required' => "Le numero est obligatoire"
         ]
     ],
 
