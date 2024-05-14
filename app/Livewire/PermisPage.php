@@ -2,16 +2,19 @@
 
 namespace App\Livewire;
 
+use App\Models\Historique;
 use App\Models\ListePermis;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 #[Title("ONDA - Liste Permis")]
 
 class PermisPage extends Component
 {
     use LivewireAlert;
+    use WithPagination;
 
     public $search;
     public function delete($id)
@@ -19,7 +22,14 @@ class PermisPage extends Component
         $permis = ListePermis::find($id);
 
         if ($permis) {
-            $permis->delete();
+            $found_permis = $permis->delete();
+            if ($found_permis) {
+                Historique::create([
+                    'user_name' => auth()->user()->nom_complet,
+                    'objet' => $permis->immatriculation,
+                    'action' => 'Suppression'
+                ]);
+            }
         }
 
         $this->alert('success', 'Supprimé avec succès!', [
@@ -41,7 +51,7 @@ class PermisPage extends Component
                 ->orWhere('numero', 'like', '%' . $this->search . '%');
         }
 
-        $permis = $query->orderByDesc('created_at')->get();
+        $permis = $query->orderByDesc('created_at')->paginate(5);
 
         return view('livewire.permis-page', [
             'permis' => $permis,

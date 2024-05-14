@@ -127,7 +127,6 @@
                             <td scope="col" class="px-6 py-3dark:text-neutral-500 border border-black border-r-0">
                                 <select wire:model="zone_acces"
                                     class="py-3 px-4 pe-9 block w-full bg-transparent text-center  rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 border border-black dark:placeholder-neutral-500 dark:focus:ring-neutral-600 appearance-none cursor-pointer">
-                                    <option selected="" required>Cliquez pour choisir une zone</option>
                                     <option value="acces_1" @if ($permis->zone_acces == 'acces_1') selected @endif>1
                                     </option>
                                     <option value="acces_2" @if ($permis->zone_acces == 'acces_2') selected @endif>2

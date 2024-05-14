@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Historique;
 use App\Models\ListePermis;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -55,7 +56,7 @@ class EditPermisPage extends Component
 
         $permis = ListePermis::where('id', $this->id)->firstOrFail();
         if ($permis) {
-            $permis->update([
+            $updated_permis = $permis->update([
                 'immatriculation' => $this->immatriculation,
                 'type_permis' => $this->type,
                 'proprietaire_chauffeur' => $this->proprietaire_chauffeur,
@@ -66,6 +67,14 @@ class EditPermisPage extends Component
                 'annee_courante' => $this->annee_courante,
                 'numero' => $this->numero,
             ]);
+
+            if ($updated_permis) {
+                Historique::create([
+                    'user_name' => auth()->user()->nom_complet,
+                    'objet' => $permis->immatriculation,
+                    'action' => 'Modification'
+                ]);
+            }
         }
 
         return redirect()->to('/permis/' . $this->id);

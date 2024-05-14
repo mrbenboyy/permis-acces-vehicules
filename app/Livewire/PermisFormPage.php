@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Historique;
 use App\Models\ListePermis;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -32,15 +33,34 @@ class PermisFormPage extends Component
             "annee_courante" => "required",
             "numero" => "required",
         ]);
+
         try {
-            ListePermis::create($permis);
-            session()->flash('success', 'créé');
+            $permisRecord = ListePermis::create($permis);
+
+            if ($permisRecord) {
+                $historiqueRecord = Historique::create([
+                    'user_name' => auth()->user()->nom_complet,
+                    'objet' => $permisRecord->immatriculation,
+                    'action' => 'Création'
+                ]);
+
+                if ($historiqueRecord) {
+                    session()->flash('success', 'créé');
+                } else {
+                    session()->flash('error', 'Historique pas créé');
+                }
+            } else {
+                session()->flash('error', 'ListePermis pas créé');
+            }
         } catch (\Exception $e) {
-            session()->flash('error', 'pas créé');
+            \Log::error('Error creating permis or historique: ' . $e->getMessage());
+
+            session()->flash('error', 'Une erreur est survenue: ' . $e->getMessage());
         }
 
         return redirect()->to(route('liste_permis'));
     }
+
 
     public function annuler()
     {

@@ -18,9 +18,9 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 12.4cm;
+        width: 468.66141732px;
         /* Set the width */
-        height: 9.5cm;
+        height: 359.05511811px;
         /* Set the height */
         overflow: hidden;
         /* Ensure content does not overflow */
@@ -31,11 +31,5 @@
     img {
         max-width: 100%;
         max-height: 100%;
-    }
-
-    /* Ensure the surrounding elements don't interfere */
-    .print-container,
-    .print-container * {
-        visibility: visible;
     }
 }

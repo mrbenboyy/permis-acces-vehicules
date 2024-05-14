@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Historique;
 use App\Models\ListePermis;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -22,7 +23,14 @@ class ViewPermis extends Component
         $permis = ListePermis::where('id', $id)->firstOrFail();
 
         if ($permis) {
-            $permis->delete();
+            $found_permis = $permis->delete();
+            if ($found_permis) {
+                Historique::create([
+                    'user_name' => auth()->user()->nom_complet,
+                    'objet' => $permis->immatriculation,
+                    'action' => 'Suppression'
+                ]);
+            }
         }
 
         return redirect()->to(route('liste_permis'));

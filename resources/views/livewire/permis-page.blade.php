@@ -129,5 +129,8 @@
                 </div>
             </div>
         </div>
+        <div class="mt-4">
+            {{ $permis->links() }}
+        </div>
     </div>
 </div>
