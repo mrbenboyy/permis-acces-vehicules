@@ -11,7 +11,7 @@ use App\Livewire\UserPage;
 use App\Livewire\ViewPermis;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', HomePage::class)->name('home');
+
 
 Route::middleware('guest')->get('/login', Login::class)->name('login');
 
