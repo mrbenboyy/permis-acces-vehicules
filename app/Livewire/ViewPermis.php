@@ -23,13 +23,18 @@ class ViewPermis extends Component
         $permis = ListePermis::where('id', $id)->firstOrFail();
 
         if ($permis) {
-            $found_permis = $permis->delete();
-            if ($found_permis) {
-                Historique::create([
-                    'user_name' => auth()->user()->nom_complet,
-                    'objet' => $permis->immatriculation,
-                    'action' => 'Suppression'
-                ]);
+            try {
+                $found_permis = $permis->delete();
+                if ($found_permis) {
+                    Historique::create([
+                        'user_name' => auth()->user()->nom_complet,
+                        'objet' => $permis->immatriculation,
+                        'action' => 'Suppression'
+                    ]);
+                    session()->flash('success', 'Permis supprimé avec succès');
+                }
+            } catch (\Exception $e) {
+                session()->flash('error', 'Erreur de suppression du permis.');
             }
         }
 

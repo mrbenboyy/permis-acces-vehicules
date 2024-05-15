@@ -1,16 +1,6 @@
 <div>
     <div class="flex justify-center lg:ms-56">
         <form wire:submit.prevent="save" class="max-w-sm space-y-3">
-            @if (session('success'))
-                <div class=" bg-green-500 text-sm text-white rounded-lg p-4 mb-2" role="alert">
-                    <span>{{ session('success') }}</span>
-                </div>
-            @endif
-            @if (session('success_update'))
-                <div class=" bg-blue-500 text-sm text-white rounded-lg p-4 mb-2" role="alert">
-                    <span>{{ session('success_update') }}</span>
-                </div>
-            @endif
             @if (session('error'))
                 <div class=" bg-red-500 text-sm text-white rounded-lg p-4 mb-2" role="alert">
                     <span>{{ session('error') }}</span>
