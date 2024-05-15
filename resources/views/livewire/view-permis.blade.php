@@ -12,6 +12,16 @@
                                         d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
                                 </svg>
                             </button></a>
+                        @if (session('success'))
+                            <div class=" bg-green-500 lg:ml-52 text-sm text-white rounded-lg p-4 mb-2" role="alert">
+                                <span>{{ session('success') }}</span>
+                            </div>
+                        @endif
+                        @if (session('error'))
+                            <div class=" bg-red-500 lg:ml-52 text-sm text-white rounded-lg p-4 mb-2" role="alert">
+                                <span>{{ session('error') }}</span>
+                            </div>
+                        @endif
                     </div>
                     <div class="print-container">
                         <table
@@ -110,7 +120,7 @@
                                 </td>
                                 <td scope="col"
                                     class="px-6 text-center py-3 dark:text-neutral-500 border border-black border-r-0">
-                                    {{ \Carbon\Carbon::createFromFormat('Y-m-d', $permis->date_expiration)->format('d/m/Y') }}
+                                    {{ \Carbon\Carbon::createFromFormat('Y-m-d', $permis->date_expiration) }}
                                 </td>
                                 <td scope="col"
                                     class="px-6 py-3 text-center text-base font-medium text-black dark:text-neutral-500 border border-black border-r-0">

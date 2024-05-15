@@ -33,7 +33,7 @@ class PermisPage extends Component
         }
 
         $this->alert('success', 'Supprimé avec succès!', [
-            'position' => 'center',
+            'position' => 'bottom-end',
             'timer' => 3000,
             'toast' => true,
             'timerProgressBar' => true,

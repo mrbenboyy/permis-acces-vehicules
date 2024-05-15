@@ -215,7 +215,7 @@
             </div>
             <div class="mt-4">
                 <button type="submit"
-                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-[#106414] text-white hover:scale-95 duration-300">
+                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-[#106414] focus:bg-teal-600 text-white hover:scale-95 duration-300">
                     <span wire:loading.remove wire:target="save">Ajouter</span><span wire:loading
                         wire:target="save">Création...</span>
                 </button>
@@ -407,7 +407,7 @@
             </div>
             <div class="mt-4">
                 <button type="submit"
-                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-[#106414] text-white hover:scale-95 duration-300">
+                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-[#106414] focus:bg-teal-600 text-white hover:scale-95 duration-300">
                     <span wire:loading.remove wire:target="save">Ajouter</span><span wire:loading
                         wire:target="save">Création...</span>
                 </button>

@@ -45,7 +45,7 @@ class PermisFormPage extends Component
                 ]);
 
                 if ($historiqueRecord) {
-                    session()->flash('success', 'créé');
+                    session()->flash('success', 'Permis créé avec succès!');
                 } else {
                     session()->flash('error', 'Historique pas créé');
                 }

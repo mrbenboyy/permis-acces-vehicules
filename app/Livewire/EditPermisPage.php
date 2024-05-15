@@ -54,27 +54,32 @@ class EditPermisPage extends Component
             "numero" => "required",
         ]);
 
-        $permis = ListePermis::where('id', $this->id)->firstOrFail();
-        if ($permis) {
-            $updated_permis = $permis->update([
-                'immatriculation' => $this->immatriculation,
-                'type_permis' => $this->type,
-                'proprietaire_chauffeur' => $this->proprietaire_chauffeur,
-                'type_vehicule' => $this->type_vehicule,
-                'zone_acces' => $this->zone_acces,
-                'date_expiration' => $this->date_expiration,
-                'raison_acces' => $this->raison_acces,
-                'annee_courante' => $this->annee_courante,
-                'numero' => $this->numero,
-            ]);
-
-            if ($updated_permis) {
-                Historique::create([
-                    'user_name' => auth()->user()->nom_complet,
-                    'objet' => $permis->immatriculation,
-                    'action' => 'Modification'
+        try {
+            $permis = ListePermis::where('id', $this->id)->firstOrFail();
+            if ($permis) {
+                $updated_permis = $permis->update([
+                    'immatriculation' => $this->immatriculation,
+                    'type_permis' => $this->type,
+                    'proprietaire_chauffeur' => $this->proprietaire_chauffeur,
+                    'type_vehicule' => $this->type_vehicule,
+                    'zone_acces' => $this->zone_acces,
+                    'date_expiration' => $this->date_expiration,
+                    'raison_acces' => $this->raison_acces,
+                    'annee_courante' => $this->annee_courante,
+                    'numero' => $this->numero,
                 ]);
+
+                if ($updated_permis) {
+                    Historique::create([
+                        'user_name' => auth()->user()->nom_complet,
+                        'objet' => $permis->immatriculation,
+                        'action' => 'Modification'
+                    ]);
+                }
             }
+            session()->flash('success', 'Permis modifié avec succès!');
+        } catch (\Exception $e) {
+            session()->flash('error', "Échec de la création de l'utilisateur. Veuillez réessayer.");
         }
 
         return redirect()->to('/permis/' . $this->id);
