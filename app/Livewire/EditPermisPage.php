@@ -78,11 +78,10 @@ class EditPermisPage extends Component
                 }
             }
             session()->flash('success', 'Permis modifié avec succès!');
+            return redirect()->to('/permis/' . $this->id);
         } catch (\Exception $e) {
-            session()->flash('error', "Échec de la création de l'utilisateur. Veuillez réessayer.");
+            session()->flash('error', "Échec de la création du permis. Veuillez réessayer.");
         }
-
-        return redirect()->to('/permis/' . $this->id);
 
     }
 

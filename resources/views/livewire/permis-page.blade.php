@@ -1,5 +1,5 @@
 <div>
-    <div class="flex flex-col mt-6 mx-3 lg:items-center lg:ms-60 mb-5">
+    <div class="flex flex-col mt-6 mx-3 lg:items-center lg:justify-center lg:ms-60 mb-5">
         <div class="max-w-sm flex mb-5">
             <!-- SearchBox -->
             <div class="relative flex-grow mr-2">
@@ -23,16 +23,6 @@
                     Nouveau
                 </button></a>
         </div>
-        @if (session('success'))
-            <div class=" bg-green-500 text-sm text-white rounded-lg p-4 mb-2" role="alert">
-                <span>{{ session('success') }}</span>
-            </div>
-        @endif
-        @if (session('error'))
-            <div class=" bg-green-500 text-sm text-white rounded-lg p-4 mb-2" role="alert">
-                <span>{{ session('error') }}</span>
-            </div>
-        @endif
 
         {{-- Tableau --}}
 
@@ -94,7 +84,7 @@
                                                 </svg>
                                             </button>
 
-                                            <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-10 bg-gray-100 shadow-md rounded-lg p-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 z-50"
+                                            <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-10 bg-gray-100 shadow-md rounded-lg p-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 z-10"
                                                 aria-labelledby="hs-dropdown-custom-icon-trigger">
 
                                                 <a wire:navigate href="/permis/{{ $perm->id }}"><button
@@ -140,7 +130,7 @@
             </div>
         </div>
         <div class="mt-4">
-            {{ $permis->links() }}
+            {{ $permis->links('pagination::tailwind') }}
         </div>
     </div>
 </div>

@@ -6,6 +6,7 @@ use App\Livewire\HistoriquePage;
 use App\Livewire\HomePage;
 use App\Livewire\PermisFormPage;
 use App\Livewire\PermisPage;
+use App\Livewire\UserInformationsPage;
 use App\Livewire\UserPage;
 use App\Livewire\ViewPermis;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/permis/{id}', ViewPermis::class)->name('voir_permis');
     Route::get('/edit/{id}', EditPermisPage::class)->name('edit_permis');
     Route::get('/historique', HistoriquePage::class)->name('historique');
+    Route::get('/user/{id}', UserInformationsPage::class)->name('user_details');
     Route::get('/logout', function () {
         auth()->logout();
         return redirect('/');

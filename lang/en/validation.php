@@ -192,7 +192,8 @@ return [
             'required' => 'Le rôle est obligatoire'
         ],
         'immatriculation' => [
-            'required' => "L'immatriculation est obligatoire"
+            'required' => "L'immatriculation est obligatoire",
+            'unique' => "Cette immatriculation existe déja!"
         ],
         'type_permis' => [
             'required' => 'Le type de permis est obligatoire'
@@ -216,7 +217,8 @@ return [
             'required' => "L'année courante est obligatoire"
         ],
         'numero' => [
-            'required' => "Le numero est obligatoire"
+            'required' => "Le numero est obligatoire",
+            'unique' => "Ce numéro existe déja!"
         ]
     ],
 

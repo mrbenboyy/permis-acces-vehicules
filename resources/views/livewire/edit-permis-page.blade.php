@@ -203,6 +203,11 @@
                 </div>
             </div>
         </div>
+            @if (session('error'))
+                <div class=" bg-red-500 text-sm text-white rounded-lg p-4 mt-2" role="alert">
+                    <span>{{ session('error') }}</span>
+                </div>
+            @endif
         <div class="mt-4">
             <button type="submit"
                 class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-blue-900 focus:bg-blue-500 text-white hover:scale-95 duration-300">

@@ -33,11 +33,16 @@ class PermisPage extends Component
         }
 
         $this->alert('success', 'Supprimé avec succès!', [
-            'position' => 'bottom-end',
+            'position' => 'top-end',
             'timer' => 3000,
             'toast' => true,
             'timerProgressBar' => true,
         ]);
+    }
+
+    public function updatingSearch()
+    {
+        $this->resetPage(); // Reset pagination when the search query changes
     }
 
     public function render()

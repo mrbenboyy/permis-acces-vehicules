@@ -23,7 +23,7 @@ class PermisFormPage extends Component
     public function save()
     {
         $permis = $this->validate([
-            "immatriculation" => "required",
+            "immatriculation" => "required|unique:liste_permis,immatriculation",
             "type_permis" => "required",
             "proprietaire_chauffeur" => "required",
             "type_vehicule" => "required",
@@ -31,7 +31,7 @@ class PermisFormPage extends Component
             "date_expiration" => "required",
             "raison_acces" => "required",
             "annee_courante" => "required",
-            "numero" => "required",
+            "numero" => "required|unique:liste_permis,numero",
         ]);
 
         try {

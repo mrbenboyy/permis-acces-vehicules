@@ -21,10 +21,17 @@ class HistoriquePage extends Component
 
     public $filter = false;
 
+    protected $listeners = ['refreshHistorique' => '$refresh'];
+
     public function annuler()
     {
         $this->reset(['search_date', 'search_user', 'search_action']);
-        $this->filter=false;
+        $this->filter = false;
+    }
+
+    public function updating($field)
+    {
+        $this->resetPage(); // Reset pagination when any of the search parameters change
     }
 
     public function render()

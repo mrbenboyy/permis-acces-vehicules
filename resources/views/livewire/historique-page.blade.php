@@ -86,8 +86,8 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4">
-            {{ $historique->links() }}
-        </div>
+            <div class="mt-4">
+                {{ $historique->links('pagination::tailwind') }}
+            </div>
     </div>
 </div>
