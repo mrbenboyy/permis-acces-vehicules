@@ -29,12 +29,14 @@
         <div class="-m-1.5 overflow-x-auto">
             <div class="p-1.5 min-w-full lg:w-[950px] inline-block align-middle">
                 @if (session('success'))
-                    <div class=" bg-green-500 text-sm text-white rounded-lg p-4 mb-2" role="alert">
+                    <div class=" bg-green-500 text-center flex lg:justify-center text-sm text-white rounded-lg p-4 mb-2"
+                        role="alert">
                         <span>{{ session('success') }}</span>
                     </div>
                 @endif
                 @if (session('error'))
-                    <div class=" bg-red-500 text-sm text-white rounded-lg p-4 mb-2" role="alert">
+                    <div class=" bg-red-500 text-center flex lg:justify-center text-sm text-white rounded-lg p-4 mb-2"
+                        role="alert">
                         <span>{{ session('error') }}</span>
                     </div>
                 @endif

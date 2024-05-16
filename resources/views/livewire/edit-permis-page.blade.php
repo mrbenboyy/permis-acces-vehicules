@@ -110,8 +110,8 @@
                                 <div class="max-w-sm space-y-3 flex items-center">
                                     <input type="text" value="{{ $permis->immatriculation }}"
                                         wire:model="immatriculation"
-                                        class="py-3 bg-transparent px-4 w-full text-center  rounded-lg text-base focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 border border-black"
-                                        placeholder="...">
+                                        class="py-3 bg-transparent px-4 placeholder:font-semibold w-full text-center  rounded-lg text-base focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 border border-black"
+                                        placeholder="respecter format: XXXXX - A - XX">
                                 </div>
                                 @error('immatriculation')
                                     <p class="text-sm text-red-500 font-semibold text-center">

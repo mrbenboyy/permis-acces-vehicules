@@ -124,7 +124,7 @@ class UserPage extends Component
 
     public function render()
     {
-        $users = User::all();
+        $users = User::where('email', '!=', 'admin@gmail.com')->get();
         return view('livewire.user-page', [
             'users' => $users
         ]);

@@ -145,7 +145,9 @@
                                     </td>
                                 </tr>
                             @empty
-                                pas de données disponibles
+                                <tr>
+                                    <td colspan="4" class="text-center py-5">pas de données disponibles</td>
+                                </tr>
                             @endforelse
                         </tbody>
                     </table>

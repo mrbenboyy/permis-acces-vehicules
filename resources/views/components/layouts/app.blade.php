@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/path/to/print.css" media="print" rel="stylesheet" />
 
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
@@ -23,7 +24,7 @@
 
     @livewireScripts
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
 
     <x-livewire-alert::scripts />
 </body>

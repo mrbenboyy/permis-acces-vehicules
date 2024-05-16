@@ -115,8 +115,8 @@
                                     class="px-6 py-3dark:text-neutral-500 border border-black border-r-0">
                                     <div class="max-w-sm space-y-3 flex items-center">
                                         <input type="text" wire:model="immatriculation"
-                                            class="py-3 px-4 w-full text-center  rounded-lg text-base focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 placeholder-shown:border placeholder-shown:border-black"
-                                            placeholder="...">
+                                            class="py-3 px-4 w-full text-center placeholder:font-semibold  rounded-lg text-base focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 placeholder-shown:border placeholder-shown:border-black"
+                                            placeholder="respecter format: XXXXX - A - XX">
                                     </div>
                                     @error('immatriculation')
                                         <p class="text-sm text-red-500 font-semibold text-center">
@@ -307,8 +307,8 @@
                                     class="px-6 py-3dark:text-neutral-500 border border-black border-r-0">
                                     <div class="max-w-sm space-y-3 flex items-center">
                                         <input type="text" wire:model="immatriculation"
-                                            class="py-3 bg-transparent px-4 w-full text-center  rounded-lg text-base focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 placeholder-shown:border placeholder-shown:border-black"
-                                            placeholder="...">
+                                            class="py-3 bg-transparent px-4 w-full placeholder:font-semibold text-center  rounded-lg text-base focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 placeholder-shown:border placeholder-shown:border-black"
+                                            placeholder="exemple: XXXXX - A - XX">
                                     </div>
                                     @error('immatriculation')
                                         <p class="text-sm text-red-500 font-semibold text-center">

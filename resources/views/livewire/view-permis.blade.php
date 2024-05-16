@@ -1,5 +1,5 @@
 <div>
-    <div class="flex animate-fade flex-col mx-3 lg:items-center lg:ms-60 mb-5">
+    <div class="flex animate-fade flex-col mx-3 lg:items-center lg:ms-60 ">
         <div class="-m-1.5 overflow-x-auto">
             <div class="p-1.5 min-w-full lg:w-[950px] inline-block align-middle">
                 <div>
@@ -51,13 +51,10 @@
                                     <p class="text-center text-base">Propriétaire - Chauffeur</p>
                                 </td>
                                 <td scope="col" class="px-6 py-3 border border-black">
-                                    <div class="w-96">
                                         <div class="relative w-full text-center min-w-[200px]">
-                                            <span
+                                            <span"
                                                 style="white-space: pre-wrap;">{{ $permis->proprietaire_chauffeur }}</span>
                                         </div>
-
-                                    </div>
                                 </td>
                                 <td scope="col" rowspan="4"
                                     class="px-6 align-top py-3 text-start text-base font-medium text-black dark:text-neutral-500 border border-black border-r-0">
@@ -120,7 +117,7 @@
                                 </td>
                                 <td scope="col"
                                     class="px-6 text-center py-3 dark:text-neutral-500 border border-black border-r-0">
-                                    {{ \Carbon\Carbon::createFromFormat('Y-m-d', $permis->date_expiration) }}
+                                    {{ \Carbon\Carbon::createFromFormat('Y-m-d', $permis->date_expiration)->format('d-m-Y') }}
                                 </td>
                                 <td scope="col"
                                     class="px-6 py-3 text-center text-base font-medium text-black dark:text-neutral-500 border border-black border-r-0">

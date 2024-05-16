@@ -5,6 +5,8 @@
 
 /* print.css */
 @media print {
+
+
     body * {
         visibility: hidden;
     }
@@ -18,14 +20,17 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 468.66141732px;
-        /* Set the width */
-        height: 359.05511811px;
-        /* Set the height */
+        width: 12.4cm;
+        /* width: 468.66141732px; */
+        height: 9.5cm;
+        /* height: 359.05511811px; */
         overflow: hidden;
-        /* Ensure content does not overflow */
-        border-collapse: collapse;
-        /* Collapse borders for printing */
+    }
+
+
+    .print-container,
+    body {
+        background-color: transparent !important;
     }
 
     img {
@@ -33,4 +38,3 @@
         max-height: 100%;
     }
 }
-
