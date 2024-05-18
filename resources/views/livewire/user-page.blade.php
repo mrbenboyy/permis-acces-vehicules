@@ -97,7 +97,7 @@
         <div class="-m-1.5 overflow-x-auto">
             <div class="p-1.5 min-w-full lg:w-[950px] inline-block align-middle">
                 <div>
-                    <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+                    <table class="min-w-full animate__animated animate__backInDown divide-y divide-gray-200 dark:divide-neutral-700">
                         <thead class="bg-black rounded-lg">
                             <tr>
                                 <th scope="col"

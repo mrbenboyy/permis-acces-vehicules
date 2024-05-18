@@ -36,11 +36,12 @@
                 <span>{{ session('error') }}</span>
             </div>
         @endif
-        <form wire:submit.prevent="save" class="flex animate-fade flex-col mt-6 mx-3 lg:items-center lg:ms-60 mb-5">
+        <form wire:submit.prevent="save" class="flex flex-col mt-6 mx-3 lg:items-center lg:ms-60 mb-5">
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full lg:w-[950px] inline-block align-middle">
                     <div>
-                        <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700 bg-white">
+                        <table
+                            class="min-w-full animate__animated animate__zoomInUp divide-y divide-gray-200 dark:divide-neutral-700 bg-white">
                             <tr>
                                 <th colspan="2"
                                     class="px-36 py-3 text-center text-xs border border-black border-t-0 border-l-0 font-medium text-black uppercase dark:text-neutral-500">
@@ -231,7 +232,8 @@
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full lg:w-[950px] inline-block align-middle">
                     <div>
-                        <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700 bg-[#FFE896]">
+                        <table
+                            class="min-w-full animate__animated animate__zoomInUp divide-y divide-gray-200 dark:divide-neutral-700 bg-[#FFE896]">
                             <tr>
                                 <th colspan="2"
                                     class="px-36 py-3 text-center text-xs border border-black border-t-0 border-l-0 font-medium text-black uppercase dark:text-neutral-500">
@@ -308,7 +310,7 @@
                                     <div class="max-w-sm space-y-3 flex items-center">
                                         <input type="text" wire:model="immatriculation"
                                             class="py-3 bg-transparent px-4 w-full placeholder:font-semibold text-center  rounded-lg text-base focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 placeholder-shown:border placeholder-shown:border-black"
-                                            placeholder="exemple: XXXXX - A - XX">
+                                            placeholder="respecter format: XXXXX - A - XX">
                                     </div>
                                     @error('immatriculation')
                                         <p class="text-sm text-red-500 font-semibold text-center">

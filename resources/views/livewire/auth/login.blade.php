@@ -1,6 +1,6 @@
 <div class="flex justify-center items-center mt-32 dark:bg-neutral-900 dark:border-neutral-700">
     <div class="p-4 sm:p-7">
-        <div class="flex justify-center">
+        <div class="flex animate__animated animate__flipInX  animate__delay-1s justify-center">
             <img src="{{ asset('img/logo.png') }}" alt="logo">
         </div>
 

@@ -1,6 +1,6 @@
 <div>
     {{-- Tableau --}}
-    <div class="flex flex-col mt-6 mx-3 lg:items-center lg:ms-60 mb-5">
+    <div class="flex animate__animated animate__backInDown flex-col mt-6 mx-3 lg:items-center lg:ms-60 mb-5">
         <div class="-m-1.5 overflow-x-auto">
             <div class="p-1.5 min-w-full lg:w-[950px] inline-block align-middle">
                 <div>
@@ -41,7 +41,7 @@
                         @endif
                     </div>
                     <!-- End SearchBox -->
-                    <table class="min-w-full animate-fade divide-y divide-gray-200 dark:divide-neutral-700">
+                    <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
                         <thead class="bg-black rounded-lg">
                             <tr>
                                 <th scope="col"

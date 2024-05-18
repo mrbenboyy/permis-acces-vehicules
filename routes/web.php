@@ -19,9 +19,9 @@ Route::middleware('guest')->get('/login', Login::class)->name('login');
 Route::middleware('auth')->group(function () {
     Route::get('/', HomePage::class)->name('home');
     Route::get('/liste_permis', PermisPage::class)->name('liste_permis');
-    Route::get('/ajouter_permis', PermisFormPage::class)->name('ajouter_permis');
-    Route::get('/permis/{id}', ViewPermis::class)->name('voir_permis');
-    Route::get('/edit/{id}', EditPermisPage::class)->name('edit_permis');
+    Route::get('/liste_permis/ajouter_permis', PermisFormPage::class)->name('ajouter_permis');
+    Route::get('/liste_permis/permis/{id}', ViewPermis::class)->name('voir_permis');
+    Route::get('/liste_permis/edit/{id}', EditPermisPage::class)->name('edit_permis');
     Route::get('/historique', HistoriquePage::class)->name('historique');
     Route::get('/user/{id}', UserInformationsPage::class)->name('user_details');
     Route::get('/logout', function () {

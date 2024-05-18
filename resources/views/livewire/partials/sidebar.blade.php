@@ -31,7 +31,7 @@
                 </li>
                 <li>
                     <a wire:navigate
-                        class="flex items-center gap-x-3.5 py-2 px-2.5 {{ request()->is('liste_permis') ? 'bg-gray-100 text-gray-700' : 'text-white' }} text-sm rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-neutral-700 dark:text-white hover:scale-105 duration-300"
+                        class="flex items-center gap-x-3.5 py-2 px-2.5 {{ request()->is('liste_permis') || request()->is('liste_permis/*') ? 'bg-gray-100 text-gray-700' : 'text-white' }} text-sm rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-neutral-700 dark:text-white hover:scale-105 duration-300"
                         href="/liste_permis">
                         <svg class="size-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512">

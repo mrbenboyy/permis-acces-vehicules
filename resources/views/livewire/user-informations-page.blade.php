@@ -1,5 +1,5 @@
 <form wire:submit.prevent="save"
-    class="my-4 max-w-screen-md border lg:ml-96 px-4 shadow-xl sm:mx-4 bg-white sm:rounded-xl sm:px-4 sm:py-4 md:mx-auto">
+    class="animate__animated animate__rollIn my-4 max-w-screen-md border lg:ml-96 px-4 shadow-xl sm:mx-4 bg-white sm:rounded-xl sm:px-4 sm:py-4 md:mx-auto">
     @if (session('success'))
         <div class=" bg-green-500 text-sm text-white rounded-lg p-4 mb-2" role="alert">
             <span>{{ session('success') }}</span>
