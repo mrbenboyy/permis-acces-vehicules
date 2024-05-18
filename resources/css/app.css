@@ -4,10 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .animate__animated.animate__zoomIn {
-    --animate-duration: 5s;
-  } */
-
+.animate__bounceIn {
+    --animate-duration: 3s;
+  }
 
 /* print.css */
 @media print {

@@ -13,7 +13,7 @@
     <title>{{ $title ?? 'ONDA' }}</title>
 </head>
 
-<body class="bg-[#D9D9D9]  font-poppins">
+<body class="bg-[#D9D9D9] animate__animated  font-poppins">
     @if (!request()->is('login'))
         @livewire('partials.sidebar')
     @endif
