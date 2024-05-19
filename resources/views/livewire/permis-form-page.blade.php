@@ -1,27 +1,36 @@
 <div>
-    <div class="flex justify-center lg:ms-56">
-        <div class="flex flex-row gap-x-8">
-            <div class="flex items-center">
-                <input type="radio" value="captif" wire:model.live="type_permis"
-                    class="shrink-0  border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                    id="type_permis-1">
-                <label for="type_permis-1" class="text-sm text-black ms-2 dark:text-neutral-400">Captif</label>
-            </div>
-
-            <div class="flex items-center">
-                <input type="radio" value="non_captif" wire:model.live="type_permis"
-                    class="shrink-0 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                    id="type_permis-3">
-                <label for="type_permis-3" class="text-sm text-black ms-2 dark:text-neutral-400">Non Captif</label>
-            </div>
-            <div class="flex">
-                <a wire:navigate href="/liste_permis"><button type="button"
-                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white disabled:opacity-50 disabled:pointer-events-none hover:scale-105 duration-300">
+    <div class="container mx-auto p-4 flex justify-center lg:pl-64 animate__animated animate__fadeIn">
+        <div class="flex flex-col lg:flex-row items-center gap-6">
+            <div class="mt-4 lg:mt-0">
+                <a wire:navigate href="/liste_permis">
+                    <button type="button"
+                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:scale-105 transition-transform duration-300">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H109.2l105.5-105.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                        </svg>
                         Retourner
-                    </button></a>
+                    </button>
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center">
+                    <input type="radio" value="captif" wire:model.live="type_permis"
+                        class="shrink-0 border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                        id="type_permis-1">
+                    <label for="type_permis-1" class="ml-2 text-md text-gray-700 dark:text-neutral-400">Captif</label>
+                </div>
+                <div class="flex items-center ml-4">
+                    <input type="radio" value="non_captif" wire:model.live="type_permis"
+                        class="shrink-0 border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                        id="type_permis-3">
+                    <label for="type_permis-3" class="ml-2 text-md text-gray-700 dark:text-neutral-400">Non
+                        Captif</label>
+                </div>
             </div>
         </div>
     </div>
+
     @if ($this->type_permis == 'non_captif')
         {{-- Non Captif Form --}}
 
@@ -216,12 +225,20 @@
             </div>
             <div class="mt-4">
                 <button type="submit"
-                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-[#106414] focus:bg-teal-600 text-white hover:scale-95 duration-300">
-                    <span wire:loading.remove wire:target="save">Ajouter</span><span wire:loading
-                        wire:target="save">Création...</span>
+                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent w-36 justify-center bg-[#106414] focus:bg-teal-600 text-white hover:scale-105 hover:bg-teal-500 transition-transform duration-300 ease-in-out">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4v16m8-8H4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span wire:loading.remove wire:target="save">Ajouter</span>
+                    <span wire:loading wire:target="save">Création...</span>
                 </button>
                 <button type="reset" wire:click="annuler"
-                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-[#CBA317] text-white hover:scale-95 duration-300">
+                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent w-36 justify-center bg-[#CBA317] text-white hover:scale-105 hover:bg-[#b3880e] transition-transform duration-300 ease-in-out">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                     Annuler
                 </button>
             </div>
@@ -409,26 +426,37 @@
             </div>
             <div class="mt-4">
                 <button type="submit"
-                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-[#106414] focus:bg-teal-600 text-white hover:scale-95 duration-300">
-                    <span wire:loading.remove wire:target="save">Ajouter</span><span wire:loading
-                        wire:target="save">Création...</span>
+                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent w-36 justify-center bg-[#106414] focus:bg-teal-600 text-white hover:scale-105 hover:bg-teal-500 transition-transform duration-300 ease-in-out">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4v16m8-8H4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span wire:loading.remove wire:target="save">Ajouter</span>
+                    <span wire:loading wire:target="save">Création...</span>
                 </button>
                 <button type="reset" wire:click="annuler"
-                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-[#CBA317] text-white hover:scale-95 duration-300">
+                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent w-36 justify-center bg-[#CBA317] text-white hover:scale-105 hover:bg-[#b3880e] transition-transform duration-300 ease-in-out">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                     Annuler
                 </button>
             </div>
         </form>
     @else
-        <div class="flex animate-bounce lg:ms-64 justify-center mt-10">
-            <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <div class="flex justify-center mt-10 lg:ml-72 animate__animated animate__bounce animate__infinite">
+            <svg class="h-12 w-12 lg:ml-20 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512">
                 <path
                     d="M160 64c0-8.8 7.2-16 16-16s16 7.2 16 16V200c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c8.8 0 16 7.2 16 16c0 10.3 6.6 19.5 16.4 22.8s20.6-.1 26.8-8.3c3-3.9 7.6-6.4 12.8-6.4c7.8 0 14.3 5.6 15.7 13c1.6 8.2 7.3 15.1 15.1 18s16.7 1.6 23.3-3.6c2.7-2.1 6.1-3.4 9.9-3.4c8.8 0 16 7.2 16 16l0 16V392c0 39.8-32.2 72-72 72H272 212.3h-.9c-37.4 0-72.4-18.7-93.2-49.9L50.7 312.9c-4.9-7.4-2.9-17.3 4.4-22.2s17.3-2.9 22.2 4.4L116 353.2c5.9 8.8 16.8 12.7 26.9 9.7s17-12.4 17-23V320 64zM176 0c-35.3 0-64 28.7-64 64V261.7C91.2 238 55.5 232.8 28.5 250.7C-.9 270.4-8.9 310.1 10.8 339.5L78.3 440.8c29.7 44.5 79.6 71.2 133.1 71.2h.9H272h56c66.3 0 120-53.7 120-120V288l0-16c0-35.3-28.7-64-64-64c-4.5 0-8.8 .5-13 1.3c-11.7-15.4-30.2-25.3-51-25.3c-6.9 0-13.5 1.1-19.7 3.1C288.7 170.7 269.6 160 248 160c-2.7 0-5.4 .2-8 .5V64c0-35.3-28.7-64-64-64zm48 304c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304zm48-16c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16v96c0 8.8 7.2 16 16 16s16-7.2 16-16V304z" />
             </svg>
         </div>
-        <div class="flex justify-center lg:ms-64">
-            <p class="text-center">Vous devez d'abord sélectionner le type de permis.</p>
+        <div class="flex justify-center lg:pl-64 animate__animated animate__fadeIn">
+            <p class="text-center text-gray-700 dark:text-gray-300">Vous devez d'abord sélectionner le type de permis.
+            </p>
         </div>
+
     @endif
 
 

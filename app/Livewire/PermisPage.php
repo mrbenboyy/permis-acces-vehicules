@@ -52,7 +52,6 @@ class PermisPage extends Component
         if ($this->search) {
             $query->where('immatriculation', 'like', '%' . $this->search . '%')
                 ->orWhere('proprietaire_chauffeur', 'like', '%' . $this->search . '%')
-                ->orWhere('type_permis', 'like', '%' . $this->search . '%')
                 ->orWhere('numero', 'like', '%' . $this->search . '%');
         }
 

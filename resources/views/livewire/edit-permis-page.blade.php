@@ -1,34 +1,47 @@
 <div>
-    <div class="flex justify-center lg:ms-56">
-        <div class="flex flex-row gap-x-8">
-            <div class="flex items-center">
-                <p class="lg:mr-5">Changer Type:</p>
-                <input type="radio" value="captif" wire:model.live="type"
-                    class="shrink-0  border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                    id="type_permis-1">
-                <label for="type_permis-1" class="text-sm text-black ms-2 dark:text-neutral-400">Captif</label>
-            </div>
-
-            <div class="flex items-center">
-                <input type="radio" value="non_captif" wire:model.live="type"
-                    class="shrink-0 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                    id="type_permis-3">
-                <label for="type_permis-3" class="text-sm text-black ms-2 dark:text-neutral-400">Non Captif</label>
-            </div>
-            <div class="flex">
-                <a wire:navigate href="/liste_permis"><button type="button"
-                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white disabled:opacity-50 disabled:pointer-events-none hover:scale-105 duration-300">
+    <div class="container mx-auto p-4 flex justify-start lg:pl-64 lg:ml-10 animate__animated animate__fadeIn">
+        <div class="flex flex-row items-center gap-6">
+            <div class="mt-4 lg:mt-0">
+                <a wire:navigate href="/liste_permis">
+                    <button type="button"
+                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:scale-105 transition-transform duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7-7-7 7 7 7"></path>
+                        </svg>
                         Retourner
-                    </button></a>
+                    </button>
+                </a>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-4">
+                <p class="text-lg font-semibold text-gray-900 dark:text-neutral-400">Changer Type:</p>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center">
+                        <input type="radio" value="captif" wire:model.live="type"
+                            class="shrink-0 border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                            id="type_permis-1">
+                        <label for="type_permis-1"
+                            class="ml-2 text-md text-gray-700 dark:text-neutral-400">Captif</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" value="non_captif" wire:model.live="type"
+                            class="shrink-0 border-gray-300 rounded-full text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                            id="type_permis-3">
+                        <label for="type_permis-3" class="ml-2 text-md text-gray-700 dark:text-neutral-400">Non
+                            Captif</label>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <form wire:submit.prevent="save" class="flex animate-fade flex-col mx-3 mt-2 lg:items-center lg:ms-60 mb-5">
+
+
+    <form wire:submit.prevent="save" class="flex flex-col mx-3 mt-2 lg:items-center lg:ms-60 mb-5">
         <div class="-m-1.5 overflow-x-auto">
             <div class="p-1.5 min-w-full lg:w-[950px] inline-block align-middle">
                 <div>
                     <table
-                        class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700 {{ $this->type == 'captif' ? 'bg-[#FFE896]' : 'bg-white' }} ">
+                        class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700 {{ $this->type == 'captif' ? 'bg-[#FFE896]  animate__animated animate__fadeInLeft' : 'bg-white animate__animated animate__fadeInRight' }} ">
                         <tr>
                             <th colspan="2"
                                 class="px-36 py-3 text-center text-xs border border-black border-t-0 border-l-0 font-medium text-black uppercase dark:text-neutral-500">
@@ -203,21 +216,31 @@
                 </div>
             </div>
         </div>
-            @if (session('error'))
-                <div class=" bg-red-500 text-sm text-white rounded-lg p-4 mt-2" role="alert">
-                    <span>{{ session('error') }}</span>
-                </div>
-            @endif
+        @if (session('error'))
+            <div class=" bg-red-500 text-sm text-white rounded-lg p-4 mt-2" role="alert">
+                <span>{{ session('error') }}</span>
+            </div>
+        @endif
         <div class="mt-4">
             <button type="submit"
-                class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-blue-900 focus:bg-blue-500 text-white hover:scale-95 duration-300">
-                <span wire:loading.remove wire:target="save">Modifier</span><span wire:loading
-                    wire:target="save">Modification...</span>
+                class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent w-36 justify-center bg-blue-900 focus:bg-blue-500 text-white hover:scale-95 transition-transform duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span wire:loading.remove wire:target="save">Modifier</span>
+                <span wire:loading wire:target="save">Modification...</span>
             </button>
+
             <button type="reset"
-                class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent  w-36 justify-center bg-[#CBA317] text-white hover:scale-95 duration-300">
+                class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent w-36 justify-center bg-[#CBA317] text-white hover:scale-95 transition-transform duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
                 Annuler
             </button>
+
         </div>
     </form>
 </div>

@@ -39,13 +39,6 @@ class UserPage extends Component
                 $user->update($validatedData);
                 session()->flash('success_update', 'Utilisateur modifié avec succès!');
                 $this->reset();
-
-                $this->alert('success', 'Modifié avec succès!', [
-                    'position' => 'top-end',
-                    'timer' => 3000,
-                    'toast' => true,
-                    'timerProgressBar' => true,
-                ]);
             } catch (\Exception $e) {
                 session()->flash('error', "Échec de la modification de l'utilisateur. Veuillez réessayer.");
             }
@@ -62,13 +55,6 @@ class UserPage extends Component
                 User::create($validatedData);
                 session()->flash('success', 'Utilisateur créé avec succès!');
                 $this->reset();
-
-                $this->alert('success', 'ajouté avec succès!', [
-                    'position' => 'top-end',
-                    'timer' => 3000,
-                    'toast' => true,
-                    'timerProgressBar' => true,
-                ]);
             } catch (\Exception $e) {
                 session()->flash('error', "Échec de la création de l'utilisateur. Veuillez réessayer.");
             }
@@ -98,7 +84,7 @@ class UserPage extends Component
         }
 
         $this->alert('success', 'Supprimé avec succès!', [
-            'position' => 'top-end',
+            'position' => 'bottom-end',
             'timer' => 3000,
             'toast' => true,
             'timerProgressBar' => true,
