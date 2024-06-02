@@ -50,7 +50,7 @@
                 <div class="p-1.5 min-w-full lg:w-[950px] inline-block align-middle">
                     <div>
                         <table
-                            class="min-w-full animate__animated animate__zoomInUp divide-y divide-gray-200 dark:divide-neutral-700 bg-white">
+                            class="min-w-full animate__animated animate__fadeIn divide-y divide-gray-200 dark:divide-neutral-700 bg-white">
                             <tr>
                                 <th colspan="2"
                                     class="px-36 py-3 text-center text-xs border border-black border-t-0 border-l-0 font-medium text-black uppercase dark:text-neutral-500">
@@ -250,7 +250,7 @@
                 <div class="p-1.5 min-w-full lg:w-[950px] inline-block align-middle">
                     <div>
                         <table
-                            class="min-w-full animate__animated animate__zoomInUp divide-y divide-gray-200 dark:divide-neutral-700 bg-[#FFE896]">
+                            class="min-w-full animate__animated animate__fadeIn divide-y divide-gray-200 dark:divide-neutral-700 bg-[#FFE896]">
                             <tr>
                                 <th colspan="2"
                                     class="px-36 py-3 text-center text-xs border border-black border-t-0 border-l-0 font-medium text-black uppercase dark:text-neutral-500">

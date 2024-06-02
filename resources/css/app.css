@@ -4,9 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.animate__bounceIn {
-    --animate-duration: 3s;
-}
+
 
 
 #docs-sidebar {
