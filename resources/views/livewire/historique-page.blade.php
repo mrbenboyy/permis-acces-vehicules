@@ -31,7 +31,11 @@
                                 <option selected="">Action</option>
                                 <option value="creation">Création</option>
                                 <option value="modification">Modification</option>
+                                <option value="archivage">Archivage</option>
+                                <option value="restauration">Restauration</option>
                                 <option value="suppression">Suppression</option>
+                                <option value="restauration_de_tous_les_permis">Restauration de tous les permis</option>
+                                <option value="suppression_de_tous_les_permis">Suppression de tous les permis</option>
                             </select>
                             @if ($this->filter == true)
                                 <button wire:click="annuler" type="button"
@@ -46,7 +50,7 @@
                         </div>
                         <div>
                             <button wire:click='vider'
-                                wire:confirm="Confirmez-vous la suppression?\nCela supprimera toutes les entrées de l'historique."
+                                wire:confirm="Confirmez-vous le vidage?\nCela supprimera toutes les entrées de l'historique."
                                 type="button"
                                 class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-red-600 text-white hover:bg-red-500 focus:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-transform duration-300">
                                 <svg class="size-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg"

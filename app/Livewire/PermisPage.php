@@ -27,12 +27,12 @@ class PermisPage extends Component
                 Historique::create([
                     'user_name' => auth()->user()->nom_complet,
                     'objet' => $permis->immatriculation,
-                    'action' => 'Suppression'
+                    'action' => 'Archivage'
                 ]);
             }
         }
 
-        $this->alert('success', 'Supprimé avec succès!', [
+        $this->alert('success', 'Archivé avec succès!', [
             'position' => 'top-end',
             'timer' => 3000,
             'toast' => true,
@@ -44,6 +44,7 @@ class PermisPage extends Component
     {
         $this->resetPage(); // Reset pagination when the search query changes
     }
+
 
     public function render()
     {

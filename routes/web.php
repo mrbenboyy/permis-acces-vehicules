@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Archive;
 use App\Livewire\Auth\Login;
 use App\Livewire\EditPermisPage;
 use App\Livewire\HistoriquePage;
@@ -24,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/liste_permis/edit/{id}', EditPermisPage::class)->name('edit_permis');
     Route::get('/historique', HistoriquePage::class)->name('historique');
     Route::get('/user/{id}', UserInformationsPage::class)->name('user_details');
+    Route::get('/permis/archives', Archive::class)->name('archives');
     Route::get('/logout', function () {
         auth()->logout();
         return redirect('/');

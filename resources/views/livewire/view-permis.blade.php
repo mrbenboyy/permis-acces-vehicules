@@ -141,7 +141,7 @@
             Imprimer
         </button>
 
-        <button wire:confirm="Confirmez-vous la suppression? \n Si vous confirmer ce permis sera definitivement effacé"
+        <button wire:confirm="Confirmez-vous la suppression? \n Si vous confirmez, ce permis sera definitivement effacé"
             wire:click="supprimer({{ $permis->id }})"
             class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent w-36 justify-center bg-red-600 text-white hover:scale-105 hover:bg-red-500 transition-transform duration-300">
             <svg class="size-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
