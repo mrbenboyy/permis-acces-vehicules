@@ -34,6 +34,11 @@ class HistoriquePage extends Component
         $this->resetPage(); // Reset pagination when any of the search parameters change
     }
 
+    public function vider()
+    {
+        Historique::truncate();
+    }
+
     public function render()
     {
         $query = Historique::query();
@@ -64,5 +69,4 @@ class HistoriquePage extends Component
             'user_name' => $user_name
         ]);
     }
-
 }
