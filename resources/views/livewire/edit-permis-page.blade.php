@@ -224,13 +224,30 @@
         <div class="mt-4">
             <button type="submit"
                 class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent w-36 justify-center bg-blue-900 focus:bg-blue-500 text-white hover:scale-95 transition-transform duration-300">
-                <svg class="size-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                <svg wire:loading.remove wire:target="save" class="size-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 448 512">
                             <path
                                 d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
                         </svg>
-                <span wire:loading.remove wire:target="save">Modifier</span>
-                <span wire:loading wire:target="save">Modification...</span>
+                    <svg class="size-5" wire:loading wire:target="save" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 200 200">
+                    <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15" cx="40"
+                        cy="65">
+                        <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                            keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate>
+                    </circle>
+                    <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15" cx="100"
+                        cy="65">
+                        <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                            keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate>
+                    </circle>
+                    <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15" cx="160"
+                        cy="65">
+                        <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                            keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate>
+                    </circle>
+                </svg>
+                Modifier
             </button>
 
             <button type="reset"
