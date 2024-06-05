@@ -1,6 +1,5 @@
 <div class="flex justify-center items-center min-h-screen bg-[#024783] bg-opacity-35 dark:bg-gray-900">
-    <div id="bg-login"
-        class="p-6 dark:bg-neutral-900 animate__animated animate__bounceIn shadow-lg rounded-lg">
+    <div id="bg-login" class="p-6 dark:bg-neutral-900 animate__animated animate__bounceIn shadow-lg rounded-lg">
         <div class="flex justify-center w-full rounded-lg mb-6">
             <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-full">
         </div>
@@ -29,6 +28,13 @@
                         <p class="mt-2 text-sm font-semibold text-red-600" id="password-error">{{ $message }}</p>
                     @enderror
                 </div>
+                <div id="captcha" class="mt-4 required" wire:ignore></div>
+
+                @error('captcha')
+                    <p class="mt-3 text-sm text-red-600 text-left">
+                        {{ $message }}
+                    </p>
+                @enderror
                 <!-- Submit Button -->
                 <div>
                     <button type="submit"
@@ -40,4 +46,19 @@
             </div>
         </form>
     </div>
+    <script src="https://www.google.com/recaptcha/api.js?onload=handle&render=explicit" async defer></script>
+
+    <script>
+        var handle = function(e) {
+            widget = grecaptcha.render('captcha', {
+                'sitekey': '{{ env('CAPTCHA_SITE_KEY') }}',
+                'theme': 'light', // you could switch between dark and light mode.
+                'callback': verify
+            });
+
+        }
+        var verify = function(response) {
+            @this.set('captcha', response)
+        }
+    </script>
 </div>

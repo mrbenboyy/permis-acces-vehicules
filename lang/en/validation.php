@@ -219,6 +219,9 @@ return [
         'numero' => [
             'required' => "Le numero est obligatoire",
             'unique' => "Ce numéro existe déja!"
+        ],
+        'captcha' => [
+            'required' => "Le captcha est obligatoire."
         ]
     ],
 
