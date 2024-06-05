@@ -81,30 +81,70 @@
                 @if ($this->id_user)
                     <button type="submit"
                         class="py-3 px-4 w-28 justify-center inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-900 text-white hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-transform duration-300">
-                        <svg class="size-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512">
+                        <svg wire:loading.remove wire:target="save" class="size-5" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path
                                 d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
                         </svg>
-                        <span wire:loading.remove wire:target='save()'>Modifier</span><span wire:loading
-                            wire:target='save()'>Modification...</span>
+                        <svg class="size-5" wire:loading wire:target="save" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 200 200">
+                            <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15" cx="40"
+                                cy="65">
+                                <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate>
+                            </circle>
+                            <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15" cx="100"
+                                cy="65">
+                                <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2">
+                                </animate>
+                            </circle>
+                            <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15"
+                                cx="160" cy="65">
+                                <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0">
+                                </animate>
+                            </circle>
+                        </svg>
+                        Modifier
                     </button>
                 @else
                     <button type="submit"
                         class="py-3 px-4 w-28 justify-center inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-green-600 text-white hover:bg-green-500 focus:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-transform duration-300">
-                        <svg class="size-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512">
+                        <svg wire:loading.remove wire:target="save" class="size-5" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path
                                 d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
                         </svg>
-                        <span wire:loading.remove wire:target='save()'>Créer</span><span wire:loading
-                            wire:target='save()'>Création...</span>
+                        <svg class="size-5" wire:loading wire:target="save" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 200 200">
+                            <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15"
+                                cx="40" cy="65">
+                                <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4">
+                                </animate>
+                            </circle>
+                            <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15"
+                                cx="100" cy="65">
+                                <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2">
+                                </animate>
+                            </circle>
+                            <circle fill="currentColor" stroke="currentColor" stroke-width="15" r="15"
+                                cx="160" cy="65">
+                                <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+                                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0">
+                                </animate>
+                            </circle>
+                        </svg>
+                        Créer
                     </button>
                 @endif
                 <button type="reset"
                     class="py-3 px-4 w-28 justify-center inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-yellow-600 text-white hover:bg-yellow-500 focus:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-transform duration-300"
                     wire:click="resetForm">
-                    <svg class="size-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <svg class="size-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
                         <path
                             d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
                     </svg>
