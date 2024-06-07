@@ -9,11 +9,11 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <a wire:navigate href="/liste_permis/ajouter_permis"
                 class="card bg-blue-600 text-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:bg-blue-800 animate__animated animate__fadeInUp">
-                <h3 class="text-xl font-bold mb-4"">Ajouter permis</h3>
+                <h3 class="text-xl font-bold mb-4"">Ajouter macaron</h3>
             </a>
             <a wire:navigate href="/liste_permis"
                 class="card bg-blue-600 text-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-110 hover:bg-blue-800 animate__animated animate__fadeInUp">
-                <h3 class="text-xl font-bold mb-4"">Liste des permis</h3>
+                <h3 class="text-xl font-bold mb-4"">Liste des macarons</h3>
             </a>
             <a wire:navigate href="/historique"
                 class="card bg-blue-600 text-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:bg-blue-800 animate__animated animate__fadeInUp">
