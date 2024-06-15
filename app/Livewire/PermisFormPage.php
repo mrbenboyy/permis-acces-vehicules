@@ -6,6 +6,8 @@ use App\Models\Historique;
 use App\Models\ListePermis;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Illuminate\Support\Facades\Log;
+
 
 #[Title('ONDA - Ajouter Permis')]
 class PermisFormPage extends Component
@@ -53,7 +55,7 @@ class PermisFormPage extends Component
                 session()->flash('error', 'ListePermis pas créé');
             }
         } catch (\Exception $e) {
-            \Log::error('Error creating permis or historique: ' . $e->getMessage());
+            Log::error('Error creating permis or historique: ' . $e->getMessage());
 
             session()->flash('error', 'Une erreur est survenue: ' . $e->getMessage());
         }

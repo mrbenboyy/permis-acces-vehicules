@@ -31,7 +31,7 @@
                 <div id="captcha" class="mt-4 required" wire:ignore></div>
 
                 @error('captcha')
-                    <p class="mt-3 text-sm text-red-600 text-left">
+                    <p class="mt-2 text-sm font-semibold text-red-600">
                         {{ $message }}
                     </p>
                 @enderror

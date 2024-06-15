@@ -5,8 +5,11 @@ namespace App\Livewire;
 use App\Models\Historique;
 use App\Models\ListePermis;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithPagination;
+
+#[Title('ONDA - Archives')]
 
 class Archive extends Component
 {
