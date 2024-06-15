@@ -45,7 +45,7 @@
                 <li>
                     <a wire:navigate
                         class="flex items-center gap-x-3.5 py-2 px-2.5 {{ request()->is('archives') ? 'bg-gray-100 text-gray-700' : 'text-white' }} text-sm rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300 hover:scale-105 duration-300"
-                        href="/permis/archives">
+                        href="/archives">
                         <svg class="size-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512">
                             <path
