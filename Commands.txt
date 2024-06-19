@@ -23,10 +23,15 @@ run the command:                       		php artisan admin:create
 
 create custom middleware: 			php artisan make:middleware CheckUserRole
 
-create table for soft deletes:			php artisan make:migration adds_soft_deletes_to_historiques_table --						table=historiques
+create table for soft deletes:			php artisan make:migration adds_soft_deletes_to_historiques_table --								table=historiques
 
 delete last migration:				php artisan migrate:rollback
 
-to not access to login :    php artisan make:middleware RedirectIfAuthenticated
+to not access to login :    			php artisan make:middleware RedirectIfAuthenticated
 
-refresh a specific table:   php artisan migrate:refresh path=database/migrations/nameOfTable.php
+refresh a specific table:   			php artisan migrate:refresh path=database/migrations/nameOfTable.php
+
+create test:					php artisan make:test LoginTest
+
+run test:                       php artisan test --filter LoginTest
+
