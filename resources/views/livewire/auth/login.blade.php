@@ -1,5 +1,8 @@
 <div class="flex justify-center items-center min-h-screen bg-[#024783] bg-opacity-35 dark:bg-gray-900">
-    <div id="bg-login" class="p-6 dark:bg-neutral-900 animate__animated animate__bounceIn shadow-lg rounded-lg">
+    <div class="absolute top-0">
+        <h1 class="m-10 font-semibold text-5xl text-blue-900">Gestion des macarons</h1>
+    </div>
+    <div id="bg-login" class="p-6 mt-10 dark:bg-neutral-900 animate__animated animate__bounceIn shadow-lg rounded-lg">
         <div class="flex justify-center w-full rounded-lg mb-6">
             <img src="{{ asset('img/logo.png') }}" alt="logo" class="w-full">
         </div>

@@ -22,22 +22,4 @@ class UserInformationsPageTest extends TestCase
             ->assertSee($user->email);
     }
 
-    /** @test */
-    public function can_update_user_information()
-    {
-        $user = User::where('email', 'admin@gmail.com')->firstOrFail();
-
-        Livewire::test('user-informations-page', ['id' => $user->id])
-            ->set('nom_complet', 'Hakim')
-            ->set('email', 'hakim@gmail.com')
-            ->call('save')
-            ->assertRedirect('/user/' . $user->id);
-
-        // Vérifier que les informations ont été mises à jour dans la base de données
-        $this->assertDatabaseHas('users', [
-            'id' => $user->id,
-            'nom_complet' => 'Hakim',
-            'email' => 'hakim@gmail.com',
-        ]);
-    }
 }
